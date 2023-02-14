@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import { Spin } from 'antd'
 
 import Ticket from '../Ticket/Ticket'
 import { useActions } from '../../hooks/useActions'
@@ -87,17 +88,12 @@ const TicketsList = () => {
     } else return null
   })
 
-  return loading ? (
+  return !loading ? (
     <ul>{element.filter((val: any) => val !== null).slice(0, 6 + ticketsOnPage)}</ul>
   ) : (
-    <h1
-      style={{
-        marginLeft: '80px',
-        marginBottom: '20px',
-      }}
-    >
-      Билеты скоро загрузятся
-    </h1>
+    <div style={{ textAlign: 'center', paddingBottom: 18 }}>
+      <Spin size="large" />
+    </div>
   )
 }
 

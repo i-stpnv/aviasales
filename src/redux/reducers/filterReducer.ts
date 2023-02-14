@@ -1,12 +1,12 @@
 import { FilterActions, FilterActionsType, IFilterState } from '../types/filter'
 
 const initialState: IFilterState = {
-  all: false,
-  without: false,
-  oneTransfer: false,
-  twoTransfers: false,
-  threeTransfers: false,
-  mainFilter: '',
+  all: true,
+  without: true,
+  oneTransfer: true,
+  twoTransfers: true,
+  threeTransfers: true,
+  mainFilter: 'cheapest',
 }
 
 export const filterReducer = (state = initialState, action: FilterActions): IFilterState => {
@@ -21,7 +21,7 @@ export const filterReducer = (state = initialState, action: FilterActions): IFil
       if (action.payload === state.mainFilter) {
         return {
           ...state,
-          mainFilter: '',
+          mainFilter: 'cheapest',
         }
       }
       return {

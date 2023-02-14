@@ -3,6 +3,7 @@ export interface TicketsListState {
   stop: boolean
   loading: boolean
 }
+
 export enum TicketsActionTypes {
   SET_TICKETS = 'SET_TICKETS',
 }

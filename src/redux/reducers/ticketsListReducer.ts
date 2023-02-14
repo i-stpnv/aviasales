@@ -3,7 +3,7 @@ import { TicketsActionTypes, TicketsListState, TicketsListActions } from '../typ
 const initialState: TicketsListState = {
   tickets: [],
   stop: false,
-  loading: false,
+  loading: true,
 }
 
 export const ticketsListReducer = (state = initialState, action: TicketsListActions) => {
@@ -11,9 +11,9 @@ export const ticketsListReducer = (state = initialState, action: TicketsListActi
     case TicketsActionTypes.SET_TICKETS: {
       return {
         ...state,
-        tickets: [...state.tickets, ...action.payload.tickets],
+        tickets: [...state.tickets, ...action.payload.tickets.sort((a: any, b: any) => a.price - b.price)],
         stop: action.payload.stop,
-        loading: true,
+        loading: false,
       }
     }
 

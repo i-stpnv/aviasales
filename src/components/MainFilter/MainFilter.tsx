@@ -4,7 +4,7 @@ import './MainFilter.scss'
 import { useActions } from '../../hooks/useActions'
 
 const MainFilter = () => {
-  const [filterCheapest, setFilterCheapest] = useState(false)
+  const [filterCheapest, setFilterCheapest] = useState(true)
   const [filterFastest, setFilterFastest] = useState(false)
   const [filterOptimal, setFilterOptimal] = useState(false)
 
